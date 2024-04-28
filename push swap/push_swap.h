@@ -8,8 +8,11 @@
 
 typedef struct s_list{
 	int data;
+	int index;
+	int position;
 	struct s_list *next;
 }t_list;
+
 
 long	ft_atoi(const char *str); 
 char	**ft_split(char const *s, char c);
@@ -23,5 +26,8 @@ void ft_sort_three(t_list **stack_a);
 void ft_sort_two(t_list **stack_a);
 int ft_get_max(t_list *stack_a);
 void ft_sort_five(t_list **stack_a, t_list **stack_b);
+void ft_get_index(t_list *stack_a);
+int ft_lstsize(t_list *stack_a);
+int ft_get_max_position(t_list *stack_a);
 
 #endif 
