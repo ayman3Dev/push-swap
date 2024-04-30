@@ -6,7 +6,7 @@
 /*   By: aaaraba <aaaraba@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 23:06:49 by aaaraba           #+#    #+#             */
-/*   Updated: 2024/04/22 22:20:27 by aaaraba          ###   ########.fr       */
+/*   Updated: 2024/04/29 18:22:34 by aaaraba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,8 @@ char	**ft_split(char const *s, char c)
 	if (s == NULL)
 		return (NULL);
 	size = ft_countword(s, c);
+	if (size == 0)
+		return (NULL);
 	array = (char **)malloc(sizeof(char *) * (size + 1));
 	if (array == NULL)
 		return (NULL);
