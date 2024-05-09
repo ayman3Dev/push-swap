@@ -6,7 +6,7 @@
 /*   By: aaaraba <aaaraba@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 15:36:32 by aaaraba           #+#    #+#             */
-/*   Updated: 2024/04/30 19:52:39 by aaaraba          ###   ########.fr       */
+/*   Updated: 2024/05/06 17:54:32 by aaaraba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,28 @@ int	ft_get_max_position(t_list *stack_a)
 	while (stack_a != NULL)
 	{
 		if (stack_a->data > max)
+		{
+			max_pos = stack_a->position;
+			max = stack_a->data;
+		}
+		stack_a = stack_a->next;
+	}
+	return (max_pos);
+}
+
+int	ft_get_min_position(t_list *stack_a)
+{
+	int	max;
+	int	max_pos;
+
+	max = stack_a->data;
+	max_pos = 0;
+	if (stack_a == NULL)
+		return (0);
+	stack_a = stack_a->next;
+	while (stack_a != NULL)
+	{
+		if (stack_a->data < max)
 		{
 			max_pos = stack_a->position;
 			max = stack_a->data;

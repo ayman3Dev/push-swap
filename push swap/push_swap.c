@@ -6,7 +6,7 @@
 /*   By: aaaraba <aaaraba@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 15:18:25 by aaaraba           #+#    #+#             */
-/*   Updated: 2024/05/05 21:20:40 by aaaraba          ###   ########.fr       */
+/*   Updated: 2024/05/09 18:18:42 by aaaraba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,22 +118,14 @@ int	main(int argc, char **argv)
 	if (argc <= 1)
 		return (0);
 	list = ft_check(argv);
-	if (ft_lstsize(list) == 4)
-	{
-		ft_sort_four(&list, &stack_b);
-		return (0);
-	}
 	if (list == NULL)
-		return (write(2, "Error\n", 6), 1);
-	if (list->next == NULL)
-		return (ft_lstclear(&list), 0);
+		return (ft_lstclear(&list), write(2, "Error\n", 6), 1);
+	ft_check_size(&list, &stack_b);
 	tmp = list;
 	while (list != NULL && list->next != NULL && list->data < list->next->data)
-	{
 		list = list->next;
-		if (list->next == NULL)
-			return (ft_lstclear(&tmp), 0);
-	}
+	if (list->next == NULL)
+		return (ft_lstclear(&tmp), 0);
 	list = tmp;
 	ft_get_index(tmp);
 	ft_push_all_to_b(&list, &stack_b);

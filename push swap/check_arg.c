@@ -6,7 +6,7 @@
 /*   By: aaaraba <aaaraba@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 16:15:05 by aaaraba           #+#    #+#             */
-/*   Updated: 2024/05/05 16:15:22 by aaaraba          ###   ########.fr       */
+/*   Updated: 2024/05/09 16:32:32 by aaaraba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,20 +29,18 @@ t_list	*ft_check(char **argv)
 	char	**buffer;
 	t_list	*list;
 	t_list	*node;
-	t_list	*tmp;
 
 	j = 1;
 	buffer = NULL;
-	tmp = NULL;
 	list = NULL;
 	node = NULL;
 	while (argv[j] != NULL)
 	{
 		buffer = ft_split(argv[j], ' ');
 		if (buffer == NULL)
-			return (ft_lstclear(&tmp), NULL);
+			return (ft_lstclear(&list), NULL);
 		if ((ft_add_to_list(buffer, 0, &list)) == 0)
-			return (ft_lstclear(&tmp), NULL);
+			return (ft_lstclear(&list), NULL);
 		free_split(buffer);
 		j++;
 	}
@@ -79,4 +77,17 @@ void	free_split(char **buffer)
 		i++;
 	}
 	free(buffer);
+}
+
+int	ft_check_size(t_list **list, t_list **stack_b)
+{
+	if (ft_lstsize(*list) == 2)
+		return (ft_sort_two(list), exit(0), 0);
+	else if (ft_lstsize(*list) == 3)
+		return (ft_sort_three(list), exit(0), 0);
+	else if (ft_lstsize(*list) == 4)
+		return (ft_sort_four(list, stack_b), exit(0), 0);
+	else if (ft_lstsize(*list) == 5)
+		return (ft_sort_five(list, stack_b, 0), exit(0), 0);
+	return (0);
 }

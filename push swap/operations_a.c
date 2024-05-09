@@ -6,7 +6,7 @@
 /*   By: aaaraba <aaaraba@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 15:32:26 by aaaraba           #+#    #+#             */
-/*   Updated: 2024/05/05 16:12:09 by aaaraba          ###   ########.fr       */
+/*   Updated: 2024/05/09 16:28:14 by aaaraba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,17 +81,30 @@ void	ft_pa(t_list **stack_a, t_list **stack_b)
 	write (1, "pa\n", 3);
 }
 
-void	ft_sort_five(t_list **stack_a, t_list **stack_b)
+void	ft_sort_five(t_list **stack_a, t_list **stack_b, int min)
 {
-	ft_pa(stack_a, stack_b);
-	ft_pa(stack_a, stack_b);
-	ft_sort_three(stack_a);
-	if ((*stack_b)->data > (*stack_b)->next->data)
-		ft_sa(stack_b);
+	t_list	*tmp;
+
+	tmp = (*stack_a);
+	while (tmp != NULL)
+	{
+		tmp->position = min;
+		tmp = tmp->next;
+		min++;
+	}
+	min = ft_get_min_position(*stack_a);
+	if (min < (ft_lstsize(*stack_a)) / 2)
+	{
+		while (min-- > 0)
+			ft_ra(stack_a);
+	}
+	else
+	{
+		while (min++ < ft_lstsize(*stack_a))
+			ft_rra(stack_a);
+	}
+	ft_pb(stack_a, stack_b);
+	ft_sort_four(stack_a, stack_b);
 	ft_pa(stack_b, stack_a);
-	if ((*stack_a)->data > (*stack_a)->next->data)
-		ft_ra(stack_a);
-	ft_pa(stack_b, stack_a);
-	if ((*stack_a)->data > (*stack_a)->next->data)
-		ft_ra(stack_a);
+	ft_lstclear(stack_a);
 }

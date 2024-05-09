@@ -6,32 +6,29 @@
 /*   By: aaaraba <aaaraba@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 17:13:28 by aaaraba           #+#    #+#             */
-/*   Updated: 2024/04/30 17:13:50 by aaaraba          ###   ########.fr       */
+/*   Updated: 2024/05/09 18:17:19 by aaaraba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	ft_overf(unsigned long r, int s)
+int	ft_strlen(char *s)
 {
-	int	n;
+	int	i;
 
-	n = 0;
-	if (r > 9223372036854775807)
-	{
-		if (s % 2 == 0)
-			n = -1;
-		else
-			n = 0;
-	}
-	return (n);
+	i = 0;
+	if (s == NULL)
+		return (0);
+	while (s[i] != '\0')
+		i++;
+	return (i);
 }
 
 long	ft_atoi(const char *str)
 {
 	int				i;
 	int				s;
-	unsigned long	r;
+	long	r;
 
 	i = 0;
 	s = 0;
@@ -44,12 +41,10 @@ long	ft_atoi(const char *str)
 			s++;
 		i++;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
+	while (str[i] >= '0' && str[i] <= '9' && r < 2147483649)
 	{
 		r = (r * 10) + str[i] - '0';
 		str++;
-		if (r > 9223372036854775807)
-			return (ft_overf(r, s));
 	}
 	if (s % 2 == 0)
 		return ((long)r);

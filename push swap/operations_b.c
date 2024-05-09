@@ -6,7 +6,7 @@
 /*   By: aaaraba <aaaraba@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 16:26:51 by aaaraba           #+#    #+#             */
-/*   Updated: 2024/05/05 21:36:18 by aaaraba          ###   ########.fr       */
+/*   Updated: 2024/05/09 16:28:55 by aaaraba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,7 @@ void	ft_sort_three(t_list **stack_a)
 	}
 	else
 		ft_sort_two(stack_a);
+	ft_lstclear(stack_a);
 }
 
 void	ft_sort_four(t_list **stack_a, t_list **stack_b)
@@ -98,10 +99,9 @@ void	ft_sort_four(t_list **stack_a, t_list **stack_b)
 	t_list	*tmp;
 	int		min;
 	int		i;
-	int		size;
 
 	i = 0;
-	min = 0;
+	min = (*stack_a)->data;
 	tmp = (*stack_a);
 	while ((*stack_a) != NULL)
 	{
@@ -113,10 +113,9 @@ void	ft_sort_four(t_list **stack_a, t_list **stack_b)
 	}
 	*stack_a = tmp;
 	while ((*stack_a)->data != min)
-        ft_ra(stack_a);
+		ft_ra(stack_a);
 	ft_pb(stack_a, stack_b);
-	size = ft_lstsize(*stack_a);
-	if (size == 3)
-		ft_sort_three(stack_a);
+	ft_sort_three(stack_a);
 	ft_pa(stack_b, stack_a);
+	ft_lstclear(stack_a);
 }

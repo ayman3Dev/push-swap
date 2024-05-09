@@ -6,7 +6,7 @@
 /*   By: aaaraba <aaaraba@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 16:34:17 by aaaraba           #+#    #+#             */
-/*   Updated: 2024/05/05 15:39:32 by aaaraba          ###   ########.fr       */
+/*   Updated: 2024/05/07 19:27:31 by aaaraba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ void	ft_sort_two(t_list **stack_a)
 	b = (*stack_a)->next->data;
 	if (a > b)
 		ft_sa(stack_a);
+	ft_lstclear(stack_a);
 }
 
 void	ft_get_index(t_list *stack_a)
