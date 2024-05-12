@@ -6,7 +6,7 @@
 /*   By: aaaraba <aaaraba@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 15:18:25 by aaaraba           #+#    #+#             */
-/*   Updated: 2024/05/09 18:18:42 by aaaraba          ###   ########.fr       */
+/*   Updated: 2024/05/12 18:13:23 by aaaraba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,12 +107,17 @@ void	ft_push_to_a(t_list **stack_b, t_list **list)
 	}
 }
 
+void f()
+{
+	system("leaks push_swap");
+}
 int	main(int argc, char **argv)
 {
 	t_list	*list;
 	t_list	*tmp;
 	t_list	*stack_b;
 
+	atexit(f);
 	tmp = NULL;
 	stack_b = NULL;
 	if (argc <= 1)
@@ -120,13 +125,13 @@ int	main(int argc, char **argv)
 	list = ft_check(argv);
 	if (list == NULL)
 		return (ft_lstclear(&list), write(2, "Error\n", 6), 1);
-	ft_check_size(&list, &stack_b);
 	tmp = list;
 	while (list != NULL && list->next != NULL && list->data < list->next->data)
 		list = list->next;
 	if (list->next == NULL)
 		return (ft_lstclear(&tmp), 0);
 	list = tmp;
+	ft_check_size(&list, &stack_b);
 	ft_get_index(tmp);
 	ft_push_all_to_b(&list, &stack_b);
 	ft_push_to_a(&stack_b, &list);

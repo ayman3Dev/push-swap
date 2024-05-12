@@ -6,17 +6,15 @@
 /*   By: aaaraba <aaaraba@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 15:29:49 by aaaraba           #+#    #+#             */
-/*   Updated: 2024/05/09 18:20:53 by aaaraba          ###   ########.fr       */
+/*   Updated: 2024/05/12 18:22:39 by aaaraba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include <limits.h>
 
 typedef struct s_list
 {

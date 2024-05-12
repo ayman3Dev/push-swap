@@ -6,7 +6,7 @@
 /*   By: aaaraba <aaaraba@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 15:36:32 by aaaraba           #+#    #+#             */
-/*   Updated: 2024/05/06 17:54:32 by aaaraba          ###   ########.fr       */
+/*   Updated: 2024/05/10 21:21:34 by aaaraba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,16 +26,6 @@ int	is_digit(const char *s)
 		i++;
 	}
 	return (1);
-}
-
-void	display_list(t_list *list, char c)
-{
-	printf("%c\n", c);
-	while (list != NULL)
-	{
-		printf(" | %d |\n", list->data);
-		list = list->next;
-	}
 }
 
 int	ft_get_max_position(t_list *stack_a)

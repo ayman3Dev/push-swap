@@ -6,7 +6,7 @@
 /*   By: aaaraba <aaaraba@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 15:32:26 by aaaraba           #+#    #+#             */
-/*   Updated: 2024/05/09 16:28:14 by aaaraba          ###   ########.fr       */
+/*   Updated: 2024/05/10 20:56:44 by aaaraba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,7 @@ void	ft_ra(t_list **list)
 	tmp = (*list);
 	tmp2 = (*list)->next;
 	while ((*list)->next != NULL)
-	{
 		(*list) = (*list)->next;
-	}
 	(*list)->next = tmp;
 	(*list)->next->next = NULL;
 	(*list) = tmp2;
@@ -51,9 +49,7 @@ void	ft_rra(t_list **list)
 		return ;
 	tmp = (*list);
 	while ((*list)->next->next != NULL)
-	{
 		(*list) = (*list)->next;
-	}
 	tmp2 = (*list)->next;
 	(*list)->next->next = tmp;
 	(*list)->next = NULL;

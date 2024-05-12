@@ -6,7 +6,7 @@
 /*   By: aaaraba <aaaraba@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 17:13:28 by aaaraba           #+#    #+#             */
-/*   Updated: 2024/05/09 18:17:19 by aaaraba          ###   ########.fr       */
+/*   Updated: 2024/05/11 15:41:24 by aaaraba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ int	ft_strlen(char *s)
 
 long	ft_atoi(const char *str)
 {
-	int				i;
-	int				s;
+	int		i;
+	int		s;
 	long	r;
 
 	i = 0;
@@ -47,6 +47,6 @@ long	ft_atoi(const char *str)
 		str++;
 	}
 	if (s % 2 == 0)
-		return ((long)r);
-	return ((long)-r);
+		return (r);
+	return (-r);
 }
