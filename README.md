@@ -1,2 +1,2 @@
 Algo
-<img width="1242" alt="Screen Shot 2024-05-12 at 6 25 18 PM" src="https://github.com/ayman3Dev/push-swap/assets/101283526/86ce9ce5-6424-408d-91ae-ea27e13fb500">
+<img width="1041" alt="Screen Shot 2024-05-13 at 10 56 03 PM" src="https://github.com/ayman3Dev/push-swap/assets/101283526/decba164-fbb1-4a8a-a13a-762fd56d4ed0">
