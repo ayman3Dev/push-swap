@@ -6,7 +6,7 @@
 /*   By: aaaraba <aaaraba@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 17:09:17 by aaaraba           #+#    #+#             */
-/*   Updated: 2024/05/01 16:31:57 by aaaraba          ###   ########.fr       */
+/*   Updated: 2024/05/12 22:22:53 by aaaraba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	ft_lstaddback(t_list **list, t_list *new_node)
 	t_list	*tmp;
 
 	tmp = *list;
-	if (!list || !new_node)
+	if (list == NULL || new_node == NULL)
 		return ;
 	if (*list == NULL)
 	{

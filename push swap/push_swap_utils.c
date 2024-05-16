@@ -6,7 +6,7 @@
 /*   By: aaaraba <aaaraba@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 16:34:17 by aaaraba           #+#    #+#             */
-/*   Updated: 2024/05/07 19:27:31 by aaaraba          ###   ########.fr       */
+/*   Updated: 2024/05/12 22:40:52 by aaaraba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,18 +59,4 @@ void	ft_get_index(t_list *stack_a)
 		max->index = size;
 		size--;
 	}
-}
-
-int	ft_is_sorted(t_list *stack_a)
-{
-	if (stack_a == NULL || stack_a->next == NULL)
-		return (0);
-	while (stack_a != NULL)
-	{
-		if (stack_a->data < stack_a->next->data)
-			stack_a = stack_a->next;
-		else
-			return (1);
-	}
-	return (0);
 }

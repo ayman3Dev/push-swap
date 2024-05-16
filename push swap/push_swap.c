@@ -6,7 +6,7 @@
 /*   By: aaaraba <aaaraba@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 15:18:25 by aaaraba           #+#    #+#             */
-/*   Updated: 2024/05/12 18:13:23 by aaaraba          ###   ########.fr       */
+/*   Updated: 2024/05/12 23:08:57 by aaaraba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	ft_push_all_to_b(t_list **stack_a, t_list **stack_b)
 	}
 }
 
-int	ft_add_to_list(char **buffer, long long num, t_list **list)
+int	ft_add_to_list(char **buffer, long num, t_list **list)
 {
 	t_list	*tmp;
 	t_list	*node;
@@ -107,17 +107,12 @@ void	ft_push_to_a(t_list **stack_b, t_list **list)
 	}
 }
 
-void f()
-{
-	system("leaks push_swap");
-}
 int	main(int argc, char **argv)
 {
 	t_list	*list;
 	t_list	*tmp;
 	t_list	*stack_b;
 
-	atexit(f);
 	tmp = NULL;
 	stack_b = NULL;
 	if (argc <= 1)

@@ -6,27 +6,11 @@
 /*   By: aaaraba <aaaraba@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 15:36:32 by aaaraba           #+#    #+#             */
-/*   Updated: 2024/05/10 21:21:34 by aaaraba          ###   ########.fr       */
+/*   Updated: 2024/05/12 23:25:38 by aaaraba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	is_digit(const char *s)
-{
-	int	i;
-
-	i = 0;
-	if (s[i] == '-' || s[i] == '+')
-		i++;
-	while (s[i] != '\0')
-	{
-		if (s[i] < '0' || s[i] > '9')
-			return (0);
-		i++;
-	}
-	return (1);
-}
 
 int	ft_get_max_position(t_list *stack_a)
 {
